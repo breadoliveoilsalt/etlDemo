@@ -6,4 +6,4 @@ class Speak
 
 end
 
-puts Speak.new.add_yo("15")
+puts Speak.new.add_yo("17")
