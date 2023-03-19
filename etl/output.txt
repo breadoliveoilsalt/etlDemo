@@ -1,1 +1,1 @@
-300
+Odd?: false; Meets threshold?: true

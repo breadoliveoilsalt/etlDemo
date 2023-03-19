@@ -18,8 +18,12 @@ class Action
 
     # puts data
 
+    is_odd = data.to_i.odd?
+    meets_threshold = data.to_i > 100
 
-    File.open("output.txt", "w") { |file| file.write(data) }
+    File.open("output.txt", "w") { |file| file.write(
+      "Odd?: #{is_odd}; Meets threshold?: #{meets_threshold}"
+    ) }
     return
   end
 
