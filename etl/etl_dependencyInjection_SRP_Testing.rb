@@ -42,12 +42,13 @@ end
 
 class Action
 
-  def run
-    data = Input.new.getInput
-
-    transformedData = Transformer.new.transform(data)
-
-    Output.new.postOutput(transformedData)
+  def run(inputRetreiver, transformerThing, outputter)
+    data = inputRetreiver()
+    transformedData = transformerThing(data)
+    outputter(transformedData)
+    # data = Input.new.getInput
+    # transformedData = Transformer.new.transform(data)
+    # Output.new.postOutput(transformedData)
   end
 
 end
@@ -65,4 +66,4 @@ Action.new.run
   # Easier testing
   # SRP
   # Data structure - ok to be creative, so long the unit tests don't get ugly
-# 5. For whatever is left, try to organize your code into things that call the pure functions and pass the right arguments along. Use dependency injection to make it testable
+# 5. For whatever is left, try to organize your code into things that call the pure functions and pass the right arguments along. Use dependency injection to make it testable -- project manager

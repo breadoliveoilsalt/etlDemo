@@ -27,3 +27,29 @@ describe Transformer do
   end
 
 end
+
+
+describe Action do
+
+  it "calls the inputRetreiver" do
+    # arrange
+    inputMock = double('inputMock')
+    transformerMock = double('transformerMock')
+    outputMock = double('outputMock')
+
+    # act
+    result = Action.new.run(inputMock, transformerMock, outputMock)
+
+    # assert
+    # expect(inputMock).to receivk(once)
+  end
+
+  it "passes the results of inputRetreiver to transformerThing" do
+
+  end
+
+  it "passes the transformed data to the outputter" do
+
+  end
+
+end
