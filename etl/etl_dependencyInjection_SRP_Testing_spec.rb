@@ -8,3 +8,22 @@ describe Speak do
   end
 
 end
+
+
+describe Transformer do
+
+  it "indicates whether the input is odd" do
+    # Arrange and act
+    result = Transformer.new.transform("100")
+    # assert
+    expect(result).to eq "Odd?: false; Meets threshold?: false"
+  end
+
+  it "indicates whether the greater than 100 threshold is met" do
+    # Arrange and act
+    result = Transformer.new.transform("200")
+    # assert
+    expect(result).to eq "Odd?: false; Meets threshold?: true"
+  end
+
+end

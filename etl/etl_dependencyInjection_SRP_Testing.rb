@@ -32,12 +32,20 @@ class Output
 
 end
 
+class Transformer
+
+  def transform(input)
+    "Odd?: #{input.to_i.odd?}; Meets threshold?: #{input.to_i > 100}"
+  end
+
+end
+
 class Action
 
   def run
     data = Input.new.getInput
 
-    transformedData = "Odd?: #{data.to_i.odd?}; Meets threshold?: #{data.to_i > 100}"
+    transformedData = Transformer.new.transform(data)
 
     Output.new.postOutput(transformedData)
   end
@@ -57,3 +65,4 @@ Action.new.run
   # Easier testing
   # SRP
   # Data structure - ok to be creative, so long the unit tests don't get ugly
+# 5. For whatever is left, try to organize your code into things that call the pure functions and pass the right arguments along. Use dependency injection to make it testable
