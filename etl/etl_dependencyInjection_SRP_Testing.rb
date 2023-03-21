@@ -42,10 +42,10 @@ end
 
 class Action
 
-  def run(inputRetreiver, transformerThing, outputter)
-    data = inputRetreiver()
-    transformedData = transformerThing(data)
-    outputter(transformedData)
+  def run(inputRetreiver, transformer, outputter)
+    data = inputRetreiver.getInput
+    transformedData = transformer.transform(data)
+    outputter.postOutput(transformedData)
     # data = Input.new.getInput
     # transformedData = Transformer.new.transform(data)
     # Output.new.postOutput(transformedData)
@@ -53,7 +53,7 @@ class Action
 
 end
 
-Action.new.run
+# Action.new.run
 
 
 

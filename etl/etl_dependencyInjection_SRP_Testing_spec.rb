@@ -31,17 +31,14 @@ end
 
 describe Action do
 
-  it "calls the inputRetreiver" do
-    # arrange
-    inputMock = double('inputMock')
-    transformerMock = double('transformerMock')
-    outputMock = double('outputMock')
+  it "gets the input" do
+    input_spy = spy(Input, getInput: "100")
+    transformer_mock = instance_double(Transformer, transform: nil)
+    output_mock = instance_double(Output, postOutput: nil)
 
-    # act
-    result = Action.new.run(inputMock, transformerMock, outputMock)
+    result = Action.new.run(input_spy, transformer_mock, output_mock)
 
-    # assert
-    # expect(inputMock).to receivk(once)
+    expect(input_spy).to have_received(:getInput)
   end
 
   it "passes the results of inputRetreiver to transformerThing" do

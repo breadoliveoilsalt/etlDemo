@@ -55,6 +55,8 @@ PLATFORMS
 DEPENDENCIES
   guard
   guard-rspec
+  rspec
+  rspec-mocks
 
 BUNDLED WITH
    2.3.22
